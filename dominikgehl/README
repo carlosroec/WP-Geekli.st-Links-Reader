@@ -1,0 +1,13 @@
+PHP wrapper for the Geekli.st API
+
+The Geekli.st API is documented at http://hackers.geekli.st/
+
+Example usage:
+<?php
+$geeklist = new Geeklist(CONSUMER_KEY, CONSUMER_SECRET);
+$geeklist->setAccessToken(ACCESSTOKEN_KEY, ACCESSTOKEN_SECRET);
+$result = $geeklist->getUser();
+if (! $result->error) {
+    $data = json_decode($result->response, true);
+}
+?>
